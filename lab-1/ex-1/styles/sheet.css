@@ -1,0 +1,88 @@
+body {
+    font-size: 1vw;
+    min-width: 550px;
+}
+aside  {
+    float: right;
+    width: 40vw;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    margin-top: 1rem;
+}      
+
+main { 
+    float: left;
+    width: 30vw;
+    height: fit-content;
+}
+nav {
+    float: left;
+    width: 150px;
+    margin: 0 34vw 0.5rem 0;
+}
+nav ul {
+    width: fit-content;
+}
+nav li {
+    /* Specyfikacja wyglądu */
+    margin-left: 2rem;
+}
+
+.azure {
+    background-color: azure;
+}
+
+.b-1-black {
+    border: 1px solid black;
+}
+
+.p-1 {
+    padding: 1rem 1rem 1rem 0.5rem;
+}
+
+.b-shadow {
+    box-shadow: 0px 0px 11px 1px rgba(66, 68, 90, 1);
+}
+
+blockquote {
+    margin: 0;
+}
+h1,h2 {
+    margin-top: 0;
+}
+aside > h1, aside > h2 {
+    margin-bottom: 0;
+}
+
+aside > h1 {
+    animation: colorchange 2s infinite;
+}
+
+@keyframes colorchange {
+    0% {
+        color: rgb(23, 203, 216);
+    }
+    50% {
+        color: rgb(226, 69, 69);
+    }
+    100% {
+        color: rgb(23, 203, 216);
+    }
+}
+
+@media (max-width: 990px) {
+    header, nav, aside, main, footer {
+        width: 100vw;
+        height: fit-content;
+        margin: 0 0 0.5rem 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 4vw;
+    }
+    body {
+        margin: 0;
+    }
+}
