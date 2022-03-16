@@ -1,0 +1,8 @@
+.item {
+    height: 200px;
+    background-color: aliceblue;
+    box-sizing: border-box;
+    background-image: url('https://i.pinimg.com/originals/eb/e4/a3/ebe4a37984a8745e78555906765df486.jpg');
+    background-size: cover;
+    background-position: center;
+}
