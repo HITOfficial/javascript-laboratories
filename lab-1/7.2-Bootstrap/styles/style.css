@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .item {
     height: 200px;
     background-color: aliceblue;
@@ -5,4 +10,10 @@
     background-image: url('https://i.pinimg.com/originals/eb/e4/a3/ebe4a37984a8745e78555906765df486.jpg');
     background-size: cover;
     background-position: center;
+}
+
+@media (max-width:767px) {
+    .text-container {
+        font-size: 20px;
+    }
 }
