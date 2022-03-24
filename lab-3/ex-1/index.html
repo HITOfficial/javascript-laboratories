@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <style>
+        .container {
+            margin: 0 auto;
+            width: 500px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .text-area {
+            width: 500px;
+        }
+
+        p {
+            margin: 0 auto;
+            width: 200px;
+            height: fit-content;
+            background-color: aliceblue;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        table {
+            margin: 20px auto 0;
+            border-spacing: 0;
+            box-shadow: 2px 2px 2px rgb(160, 160, 160);
+
+        }
+
+        th,
+        td {
+            background-color: aliceblue;
+            width: 100px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        tr td:nth-child(2n+1) {
+            background-color: aliceblue;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div class="container">
+        <div class="area-container">
+            <textarea class="text-area" name="" id="area" cols="30" rows="10"></textarea>
+        </div>
+        <div class="buttons">
+            <input type="submit" class="execute" onclick="LocalStorageCRUD()" value="execute">
+            <input type="checkbox" id="checkbox" class="checkbox" value="web storage">
+            <label for="checkbox"> Web value</label>
+        </div>
+    </div>
+
+    <div class="content">
+        <table class="table mt-5 w-xs-100 w-md-80">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>New Cases</th>
+                    <th>Total Deaths</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script src="scripts/script.js" async defer></script>
+</body>
+
+</html>
