@@ -4,7 +4,6 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-
 <head>
     <style>
         .container {
@@ -55,10 +54,14 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css">
+
 </head>
 
 <body>
+
+<div id="mocha">
+</div>
     <div class="container">
         <div class="area-container">
             <textarea class="text-area" name="" id="area" cols="30" rows="10"></textarea>
@@ -84,7 +87,22 @@
             </tbody>
         </table>
     </div>
-    <script src="scripts/script.js" async defer></script>
+
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+    <script class="mocha-init">
+        mocha.setup({
+            globals: ['*']
+        });
+        mocha.setup('bdd');
+        mocha.checkLeaks();
+    </script>
+    <script src="scripts/script.js"></script>
+    <script class="mocha-exec">
+
+        mocha.run();
+    </script>
+
 </body>
 
 </html>

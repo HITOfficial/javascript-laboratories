@@ -1,3 +1,51 @@
+'strick mode';
+let expect = chai.expect;
+
+
+
+function updateStorageTest(val) {
+    document.querySelector(".text-area").value = val;
+
+    if (val.length > 0){
+        const newData = document.querySelector(".text-area").value.split(" ");
+        const dbJSON = localStorage.getItem("db");
+        const db = JSON.parse(dbJSON);
+        const index = findInDB(db, newData);
+
+        // c
+        if( val[0] === "c") {
+            const storageCRUD = LocalStorageCRUD();
+            const added = findInDB(JSON.parse(dbJSON), newData);
+            return index === -1 && added === -1 && storageCRUD === 1;
+        }
+        else if( val[0] === "d") {
+            const storageCRUD = LocalStorageCRUD();
+            const added = findInDB(JSON.parse(dbJSON), newData);
+            return index === 1 && added === -1 && storageCRUD === 1;
+        }
+        else if( val[0] === "u") {
+            const storageCRUD = LocalStorageCRUD();
+            const added = findInDB(JSON.parse(dbJSON), newData);
+            return index === 1 && added === 1 && storageCRUD === 1;
+        }
+    }
+    return false;
+}
+
+describe('TESTING', function () {
+    // zealand
+    it('c Zeland 10 20', function () {
+        expect(updateStorageTest("c Zeland 10 20")).to.equal(true);
+
+    });
+    it('u Zeland 10 20', function () {
+        expect(updateStorageTest("u Zeland 10 20")).to.equal(true);
+    });
+    it('d Zeland 10 20', function () {
+        expect(updateStorageTest("d Zeland 10 20")).to.equal(true);
+    });
+});
+
 
 function loadThis() {
     const dbData = [
@@ -56,13 +104,12 @@ function LocalStorageCRUD() {
             // adding new data to array
             newData.splice(0, 1);
             db.push(newData);
-
         }
     }
     // delete
     else if (newData[0] === "d") {
         // data d
-        if (index != -1) {
+        if (index !== -1) {
             db.splice(index, 1);
         }
         else {
